@@ -25,17 +25,14 @@ export const CustomerListResults = ({ customers, ...rest }) => {
     
   };
   
-  const Data = () => {
+  
+  useEffect(() => {
     axios.post(`https://demo1779595.mockable.io/companies`, { user })
       .then(res => {
         console.log(res.data.companiesList)
         setUser(res.data.companiesList)
       })
-  }
-  // useEffect(() => {
-    
-  //   Data();
-  // },[])
+  },[])
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
