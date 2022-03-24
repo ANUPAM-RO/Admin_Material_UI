@@ -32,7 +32,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
         console.log(res.data.companiesList)
         setUser(res.data.companiesList)
       })
-  },[])
+  })
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
