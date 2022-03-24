@@ -32,10 +32,10 @@ export const CustomerListResults = ({ customers, ...rest }) => {
         setUser(res.data.companiesList)
       })
   }
-  useEffect(() => {
+  // useEffect(() => {
     
-    Data();
-  },[])
+  //   Data();
+  // },[])
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
