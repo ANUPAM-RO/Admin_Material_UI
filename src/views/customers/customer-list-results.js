@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 import axios  from 'axios'
-import { format } from 'date-fns';
+
 import {
-  Avatar,
   Box,
   Card,
   Checkbox,
@@ -14,7 +13,6 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Typography
 } from '@mui/material';
 
 
@@ -52,21 +50,10 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   };
 
   const handleSelectOne = (event, id) => {
-    const selectedIndex = setUser.indexOf(id);
+    
     let newSelectedCustomerIds = [];
 
-    // if (selectedIndex === -1) {
-    //   newSelectedCustomerIds = newSelectedCustomerIds.concat(selectedCustomerIds, id);
-    // } else if (selectedIndex === 0) {
-    //   newSelectedCustomerIds = newSelectedCustomerIds.concat(selectedCustomerIds.slice(1));
-    // } else if (selectedIndex === selectedCustomerIds.length - 1) {
-    //   newSelectedCustomerIds = newSelectedCustomerIds.concat(selectedCustomerIds.slice(0, -1));
-    // } else if (selectedIndex > 0) {
-    //   newSelectedCustomerIds = newSelectedCustomerIds.concat(
-    //     selectedCustomerIds.slice(0, selectedIndex),
-    //     selectedCustomerIds.slice(selectedIndex + 1)
-    //   );
-    // }
+   
 
     setUser(newSelectedCustomerIds);
   };
@@ -88,12 +75,8 @@ export const CustomerListResults = ({ customers, ...rest }) => {
               <TableRow>
                 <TableCell padding="checkbox">
                   <Checkbox
-                    // checked={selectedCustomerIds.length === customers.length}
+                   
                     color="primary"
-                    // indeterminate={
-                    //   selectedCustomerIds.length > 0
-                    //   && selectedCustomerIds.length < customers.length
-                    // }
                     onChange={handleSelectAll}
                   />
                 </TableCell>
@@ -152,7 +135,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                     {customer.status}
                   </TableCell>
                   <TableCell>
-                    {customer.varified}
+                    {customer.verified ? "true" : "false" }
                   </TableCell>
                   
                 </TableRow>

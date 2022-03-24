@@ -28,10 +28,6 @@ const Customers = () => (
     </Box>
   </>
 );
-// Customers.getLayout = (page) => (
-//   <DashboardLayout>
-//     {page}
-//   </DashboardLayout>
-// );
+
 
 export default Customers;
